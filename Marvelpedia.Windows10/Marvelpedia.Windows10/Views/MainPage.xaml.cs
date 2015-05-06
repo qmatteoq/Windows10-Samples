@@ -40,9 +40,15 @@ namespace Marvelpedia.Windows10.Views
             CharacterResponse response = await client.GetCharactersForSeriesAsync(1067);
             IEnumerable<Character> filteredList = response.Results.Where(x => x.Thumbnail != null);
             ObservableCollection<Character> characters = new ObservableCollection<Character>(filteredList);
-            CharactersView.ItemsSource = characters;
+            CharactersWideView.ItemsSource = characters;
 
             IsLoading.IsActive = false;
         }
+
+        private void SplitViewButton_Click(object sender, RoutedEventArgs e)
+        {
+            SplitViewControl.IsPaneOpen = !SplitViewControl.IsPaneOpen;
+        }
+
     }
 }

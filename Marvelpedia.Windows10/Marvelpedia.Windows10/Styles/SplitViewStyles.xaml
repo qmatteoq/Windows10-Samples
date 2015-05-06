@@ -20,13 +20,6 @@
     <x:Double x:Key="SplitViewNormalNavFontSize">16</x:Double>
     <x:Double x:Key="SplitViewLargeNavFontSize">20</x:Double>
 
-    <Style TargetType="SplitView">
-        <Setter Property="IsPaneOpen" Value="False" />
-        <Setter Property="OpenPaneLength" Value="320" />
-        <Setter Property="CompactPaneLength" Value="48" />
-        <Setter Property="PaneBackground" Value="{ThemeResource SplitViewBackgroundBrush}" />
-        <Setter Property="DisplayMode" Value="CompactOverlay" />
-    </Style>
 
     <Style TargetType="TextBlock" x:Key="SplitViewTextBlockStyle">
         <Setter Property="VerticalAlignment" Value="Center" />

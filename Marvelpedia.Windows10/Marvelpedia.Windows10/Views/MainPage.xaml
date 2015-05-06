@@ -5,34 +5,92 @@
     xmlns:local="using:Marvelpedia.Windows10.Views"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    RequestedTheme="Dark"
     mc:Ignorable="d">
 
     <Page.Resources>
-        <Style TargetType="TextBlock">
-            <Setter Property="FontFamily" Value="Segoe UI" />
-        </Style>
+
+
+
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <ProgressRing HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="OrangeRed" x:Name="IsLoading" />
-        <GridView x:Name="CharactersView"  Margin="19, 0, 0, 0">
-            <GridView.ItemTemplate>
-                <DataTemplate>
-                    <Grid>
-                        <Image Source="{Binding Path=Thumbnail.FullSizeUri}" VerticalAlignment="Bottom" Stretch="UniformToFill" />
-                        <Border Background="Gray" Opacity="0.8" Height="100" VerticalAlignment="Bottom">
-                            <TextBlock Text="{Binding Name}" Foreground="White" FontSize="30" Margin="19, 0, 0, 19"
+
+        <SplitView x:Name="SplitViewControl" OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel>
+                    <RadioButton Command="{Binding NavCommand}" Content="Characters" GroupName="Nav">
+                        <RadioButton.Tag>
+                            <FontIcon FontFamily="{ThemeResource ContentControlThemeFontFamily}" Glyph="&#x2261;" FontSize="32" Margin="0,-8,0,0" />
+                        </RadioButton.Tag>
+                    </RadioButton>
+                </StackPanel>
+            </SplitView.Pane>
+            
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Border Grid.Row="0" Background="OrangeRed" Height="50" VerticalAlignment="Top" >
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Background="Transparent" Click="SplitViewButton_Click">
+                            <FontIcon FontFamily="{ThemeResource ContentControlThemeFontFamily}" Glyph="&#x2261;" FontSize="32" Margin="0,-8,0,0"/>
+                        </Button>
+                        <TextBlock Text="Page title" FontSize="24" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Border>
+
+                <Grid Grid.Row="1" VerticalAlignment="Top">
+                    <ProgressRing HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="OrangeRed" x:Name="IsLoading" />
+                    <GridView x:Name="CharactersWideView">
+                        <GridView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image Source="{Binding Path=Thumbnail.FullSizeUri}" VerticalAlignment="Bottom" Stretch="UniformToFill" />
+                                    <Border Background="Gray" Opacity="0.8" Height="100" VerticalAlignment="Bottom">
+                                        <TextBlock Text="{Binding Name}" Foreground="White" FontSize="30" Margin="19, 0, 0, 19"
                                        VerticalAlignment="Bottom"/>
-                        </Border>
-                    </Grid>
-                </DataTemplate>
-            </GridView.ItemTemplate>
-            <GridView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <ItemsWrapGrid Orientation="Horizontal" ItemWidth="400" />
-                </ItemsPanelTemplate>
-            </GridView.ItemsPanel>
-        </GridView>
+                                    </Border>
+                                </Grid>
+                            </DataTemplate>
+                        </GridView.ItemTemplate>
+                        <GridView.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <ItemsWrapGrid Orientation="Horizontal" ItemWidth="400" />
+                            </ItemsPanelTemplate>
+                        </GridView.ItemsPanel>
+                    </GridView>
+                </Grid>
+            </Grid>
+        </SplitView>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowsState">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SplitViewControl.DisplayMode" Value="Inline" />
+                        <Setter Target="SplitViewControl.IsPaneOpen" Value="True" />
+                        
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SplitViewControl.DisplayMode" Value="Overlay" />
+                        <Setter Target="SplitViewControl.IsPaneOpen" Value="False" />
+                        
+                        
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        
     </Grid>
+
 </Page>
