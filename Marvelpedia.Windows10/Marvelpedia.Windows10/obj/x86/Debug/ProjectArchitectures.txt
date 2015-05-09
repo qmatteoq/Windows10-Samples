@@ -1,1 +1,0 @@
-C:\Users\mpagani\Repositories\Samples\Prague\Marvelpedia.Windows10\Marvelpedia.Windows10\Marvelpedia.Windows10.csproj;x86
