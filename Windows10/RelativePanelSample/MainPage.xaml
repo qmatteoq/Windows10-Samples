@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="RelativePanelSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RelativePanelSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        
+        <!--<RelativePanel>
+            <TextBlock Text="I'm a text" RelativePanel.AlignTopWithPanel="True" 
+                       RelativePanel.AlignLeftWithPanel="True"
+                       FontSize="24" x:Name="FirstText" />
+            
+            <TextBlock Text="I'm another text" RelativePanel.AlignBottomWithPanel="True" FontSize="24"
+                       RelativePanel.AlignRightWithPanel="True" />
+        </RelativePanel>-->
+        
+        <RelativePanel>
+            <Rectangle Fill="OrangeRed" x:Name="Rectangle1" Width="400" Height="400"/>
+            <Rectangle Fill="Green" x:Name="Rectangle2" Width="400" Height="400" />
+            <Rectangle Fill="DeepSkyBlue" x:Name="Rectangle3" Width="400" Height="400" />
+            <Rectangle Fill="Gold" x:Name="Rectangle4" Width="400" Height="400" />
+        </RelativePanel>
+
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup x:Name="WindowsState">
+                <VisualState x:Name="WideState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="600" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Rectangle2.(RelativePanel.RightOf)" Value="Rectangle1" />
+                        <Setter Target="Rectangle3.(RelativePanel.Below)" Value="Rectangle1" />
+                        <Setter Target="Rectangle4.(RelativePanel.RightOf)" Value="Rectangle3" />
+                        <Setter Target="Rectangle4.(RelativePanel.Below)" Value="Rectangle2" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState x:Name="NarrowState">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="Rectangle2.(RelativePanel.Below)" Value="Rectangle1" />
+                        <Setter Target="Rectangle3.(RelativePanel.Below)" Value="Rectangle2" />
+                        <Setter Target="Rectangle4.(RelativePanel.Below)" Value="Rectangle3" />
+                        <Setter Target="Rectangle1.Width" Value="200" />
+                        <Setter Target="Rectangle1.Height" Value="200" />
+                        <Setter Target="Rectangle2.Width" Value="200" />
+                        <Setter Target="Rectangle2.Height" Value="200" />
+                        <Setter Target="Rectangle3.Width" Value="200" />
+                        <Setter Target="Rectangle3.Height" Value="200" />
+                        <Setter Target="Rectangle4.Width" Value="200" />
+                        <Setter Target="Rectangle4.Height" Value="200" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+    </Grid>
+</Page>
