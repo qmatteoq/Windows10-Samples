@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Home"
+             x:Class="XamarinForms.Step1.Views.MainView">
+
+  <Grid>
+    <ListView x:Name="CharactersList" RowHeight="300" SeparatorVisibility="None">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <StackLayout>
+                <Image Source="{Binding Path=Thumbnail.FullSizeUri}" VerticalOptions="End" Aspect="AspectFill"
+                    HeightRequest="300"  />
+              </StackLayout>
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+    <ActivityIndicator HorizontalOptions="Center" VerticalOptions="Center" x:Name="LoadingIndicator" Color="Accent" WidthRequest="100" HeightRequest="100" />
+  </Grid>
+</ContentPage>

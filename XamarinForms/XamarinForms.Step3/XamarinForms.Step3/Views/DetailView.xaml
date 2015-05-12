@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Details"
+             x:Class="XamarinForms.Step3.Views.DetailView">
+  
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Read" Clicked="OnReadTextClicked" Icon="Speech.png" />
+  </ContentPage.ToolbarItems>
+ 
+  <StackLayout Padding="12, 0, 12, 0">
+    <Label FontAttributes="Bold" FontSize="30" x:Name="CharacterName" />
+    <Label x:Name="CharacterDescription" />
+  </StackLayout>
+</ContentPage>
