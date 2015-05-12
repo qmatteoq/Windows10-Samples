@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Comics"
+             x:Class="XamarinForms.Step4.Views.ComicsView">
+  
+  <Grid Padding="12, 0, 12, 0">
+    <ListView x:Name="ComicsList" RowHeight="50" SeparatorVisibility="None">
+      <ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell>
+            <ViewCell.View>
+              <Label Text="{Binding Title}" />
+            </ViewCell.View>
+          </ViewCell>
+        </DataTemplate>
+      </ListView.ItemTemplate>
+    </ListView>
+
+    <ActivityIndicator x:Name="LoadingIndicator" Color="Accent" WidthRequest="100" HeightRequest="100" />
+  </Grid>
+
+</ContentPage>
