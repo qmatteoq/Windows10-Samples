@@ -44,22 +44,29 @@ namespace ApiDetection
             await dialog.ShowAsync();
         }
 
-        private async void OnGetSensorDataClicked(object sender, RoutedEventArgs e)
+        protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             var ns = "Windows.Devices.Gpio.GpioController";
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(ns))
             {
                 GpioController controller = GpioController.GetDefault();
-                GpioPin pin = controller.OpenPin(5);
-                GpioPinValue value = pin.Read();
-                Debug.WriteLine(value);
+                if (controller != null)
+                {
+                    GpioPin pin = controller.OpenPin(13);
+                    DispatcherTimer timer = new DispatcherTimer();
+                    timer.Interval = TimeSpan.FromSeconds(1);
+                    timer.Tick += (send, args) =>
+                    {
+                        GpioPinValue value = pin.Read();
+                        Status.Text = value == GpioPinValue.High ? "You're moving!" : "You're not moving!";
+                    };
+                    timer.Start();
+                }
             }
             else
             {
-                MessageDialog dialog = new MessageDialog("This isn't an IoT device!");
-                await dialog.ShowAsync();
+                Status.Text = "This isn't an IoT device!";
             }
-            
         }
     }
 }

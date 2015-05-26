@@ -12,7 +12,7 @@
             <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
                    FontSize="24" Text="I'm a Universal Windows app!" />
 
-            <Button Content="Get value from sensor" Click="OnGetSensorDataClicked" />
+            <TextBlock x:Name="Status" FontSize="40" />
         </StackPanel>
     </Grid>
 </Page>
