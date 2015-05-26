@@ -8,6 +8,11 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Text="I'm a Universal Windows app!" />
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                   FontSize="24" Text="I'm a Universal Windows app!" />
+
+            <Button Content="Get value from sensor" Click="OnGetSensorDataClicked" />
+        </StackPanel>
     </Grid>
 </Page>

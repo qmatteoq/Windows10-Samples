@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Devices.Gpio;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
@@ -40,6 +42,24 @@ namespace ApiDetection
             e.Handled = true;
             MessageDialog dialog = new MessageDialog("Hello from the Back button!");
             await dialog.ShowAsync();
+        }
+
+        private async void OnGetSensorDataClicked(object sender, RoutedEventArgs e)
+        {
+            var ns = "Windows.Devices.Gpio.GpioController";
+            if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(ns))
+            {
+                GpioController controller = GpioController.GetDefault();
+                GpioPin pin = controller.OpenPin(5);
+                GpioPinValue value = pin.Read();
+                Debug.WriteLine(value);
+            }
+            else
+            {
+                MessageDialog dialog = new MessageDialog("This isn't an IoT device!");
+                await dialog.ShowAsync();
+            }
+            
         }
     }
 }
