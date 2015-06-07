@@ -1,0 +1,17 @@
+﻿<ResourceDictionary
+    x:Class="NewBindingSample.Styles.Templates"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NewBindingSample.Styles"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:model="using:NewBindingSample.Model"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006">
+
+    <DataTemplate x:DataType="model:Person" x:Key="PeopleTemplate">
+        <StackPanel Orientation="Horizontal">
+            <TextBlock Text="{x:Bind Path=Name}" x:Phase="1" Margin="0, 0, 5, 0" />
+            <TextBlock Text="{x:Bind Path=Surname}" x:Phase="2" />
+        </StackPanel>
+    </DataTemplate>
+
+</ResourceDictionary>

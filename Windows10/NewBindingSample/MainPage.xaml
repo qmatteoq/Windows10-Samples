@@ -1,19 +1,18 @@
 ﻿<Page
-    x:Class="ApiDetection.MainPage"
+    x:Class="NewBindingSample.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:ApiDetection"
+    xmlns:local="using:NewBindingSample"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
-                   FontSize="24" Text="I'm a Universal Windows app!" />
-
-            <TextBlock x:Name="Status" FontSize="40" />
+            <Button Content="Standard binding" Click="OnStandardBindingClicked" Margin="0 , 0, 0, 15" />
+            <Button Content="MVVM Binding" Click="OnMvvmBindingClicked" Margin="0 , 0, 0, 15" />
+            <Button Content="Events binding" Click="OnEventsBindingClicked" Margin="0 , 0, 0, 15" />
+            <Button Content="List binding" Click="OnListBindingClicked" />
         </StackPanel>
-        
     </Grid>
 </Page>

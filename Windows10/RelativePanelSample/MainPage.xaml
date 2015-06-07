@@ -9,15 +9,6 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         
-        <!--<RelativePanel>
-            <TextBlock Text="I'm a text" RelativePanel.AlignTopWithPanel="True" 
-                       RelativePanel.AlignLeftWithPanel="True"
-                       FontSize="24" x:Name="FirstText" />
-            
-            <TextBlock Text="I'm another text" RelativePanel.AlignBottomWithPanel="True" FontSize="24"
-                       RelativePanel.AlignRightWithPanel="True" />
-        </RelativePanel>-->
-        
         <RelativePanel>
             <Rectangle Fill="OrangeRed" x:Name="Rectangle1" Width="400" Height="400"/>
             <Rectangle Fill="Green" x:Name="Rectangle2" Width="400" Height="400" />

@@ -1,0 +1,19 @@
+﻿<Application
+    x:Class="NewBindingSample.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NewBindingSample"
+    xmlns:viewModels="using:NewBindingSample.ViewModels"
+    xmlns:templates="using:NewBindingSample.Styles"
+    RequestedTheme="Light">
+    
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <templates:Templates />
+            </ResourceDictionary.MergedDictionaries>
+            <viewModels:MainViewModel x:Key="MainViewModel" />
+        </ResourceDictionary>
+    </Application.Resources>
+
+</Application>
