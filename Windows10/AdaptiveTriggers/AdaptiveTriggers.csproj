@@ -146,6 +146,12 @@
       <Private>True</Private>
     </Reference>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Libraries\WindowsStateTriggers\src\WindowsStateTriggers\WindowsStateTriggers.csproj">
+      <Project>{52d52f3c-4f64-4957-9fe8-780b7d7f75c3}</Project>
+      <Name>WindowsStateTriggers</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

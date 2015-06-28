@@ -5,13 +5,15 @@
     xmlns:local="using:AdaptiveTriggers"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:windowsStateTriggers="using:WindowsStateTriggers"
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" 
           x:Name="MainGrid">
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" 
-                   FontSize="24"
-                   Text="I'm a Universal Windows app!" />
+        
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock FontSize="24" Text="I'm a Universal Windows app!" />
+        </StackPanel>
 
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup x:Name="WindowsState">

@@ -36,7 +36,6 @@ namespace ApiDetection
             }
         }
 
-
         private async void Back_BackPressed(object sender, BackPressedEventArgs e)
         {
             e.Handled = true;
