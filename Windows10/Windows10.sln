@@ -15,8 +15,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewBindingSample", "NewBind
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveTiles", "AdaptiveTiles\AdaptiveTiles.csproj", "{0965F5FA-1F2D-46C8-97F0-2C31D453AC3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WindowsStateTriggers", "..\..\..\Libraries\WindowsStateTriggers\src\WindowsStateTriggers\WindowsStateTriggers.csproj", "{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -149,22 +147,6 @@ Global
 		{0965F5FA-1F2D-46C8-97F0-2C31D453AC3C}.Release|x86.ActiveCfg = Release|x86
 		{0965F5FA-1F2D-46C8-97F0-2C31D453AC3C}.Release|x86.Build.0 = Release|x86
 		{0965F5FA-1F2D-46C8-97F0-2C31D453AC3C}.Release|x86.Deploy.0 = Release|x86
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|ARM.ActiveCfg = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|ARM.Build.0 = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|x64.ActiveCfg = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|x64.Build.0 = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Debug|x86.Build.0 = Debug|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|ARM.ActiveCfg = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|ARM.Build.0 = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|x64.ActiveCfg = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|x64.Build.0 = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|x86.ActiveCfg = Release|Any CPU
-		{52D52F3C-4F64-4957-9FE8-780B7D7F75C3}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
