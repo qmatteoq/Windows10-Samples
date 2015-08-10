@@ -14,42 +14,42 @@ namespace ExtendedExecution
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-public sealed partial class MainPage : Page
-{
-    public MainPage()
+    public sealed partial class MainPage : Page
     {
-        this.InitializeComponent();
-    }
-
-    protected override async void OnNavigatedTo(NavigationEventArgs e)
-    {
-        if (e.NavigationMode == NavigationMode.New)
+        public MainPage()
         {
-            var extendedSession = new ExtendedExecutionSession();
-            extendedSession.Reason = ExtendedExecutionReason.LocationTracking;
-            extendedSession.Description = "Location tracking";
-
-            ExtendedExecutionResult result = await extendedSession.RequestExtensionAsync();
-            if (result == ExtendedExecutionResult.Allowed)
-            {
-                Debug.WriteLine("Background execution approved");
-            }
-            else
-            {
-                Debug.WriteLine("Background execution denied");
-            }
-
-            Geolocator locator = new Geolocator();
-            locator.DesiredAccuracyInMeters = 0;
-            locator.MovementThreshold = 500;
-            locator.DesiredAccuracy = PositionAccuracy.High;
-            locator.PositionChanged += Locator_PositionChanged;
+            this.InitializeComponent();
         }
-    }
 
-    private void Locator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
-    {
-        string xml = $@"
+        protected override async void OnNavigatedTo(NavigationEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.New)
+            {
+                var extendedSession = new ExtendedExecutionSession();
+                extendedSession.Reason = ExtendedExecutionReason.LocationTracking;
+                extendedSession.Description = "Location tracking";
+
+                ExtendedExecutionResult result = await extendedSession.RequestExtensionAsync();
+                if (result == ExtendedExecutionResult.Allowed)
+                {
+                    Debug.WriteLine("Background execution approved");
+                }
+                else
+                {
+                    Debug.WriteLine("Background execution denied");
+                }
+
+                Geolocator locator = new Geolocator();
+                locator.DesiredAccuracyInMeters = 0;
+                locator.MovementThreshold = 500;
+                locator.DesiredAccuracy = PositionAccuracy.High;
+                locator.PositionChanged += Locator_PositionChanged;
+            }
+        }
+
+        private void Locator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
+        {
+            string xml = $@"
             <toast activationType='foreground' launch='args'>
                 <visual>
                     <binding template='ToastGeneric'>
@@ -59,12 +59,12 @@ public sealed partial class MainPage : Page
                 </visual>
             </toast>";
 
-        XmlDocument doc = new XmlDocument();
-        doc.LoadXml(xml);
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
 
-        ToastNotification notification = new ToastNotification(doc);
-        ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
-        notifier.Show(notification);
+            ToastNotification notification = new ToastNotification(doc);
+            ToastNotifier notifier = ToastNotificationManager.CreateToastNotifier();
+            notifier.Show(notification);
+        }
     }
-}
 }
