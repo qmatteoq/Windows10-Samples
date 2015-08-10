@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>DifferentPages_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>59D354876ED915CB8A5A6BB8646BC9398298896E</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>775AF6EF31E0517A6F974D0D4739557356841E4F</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>

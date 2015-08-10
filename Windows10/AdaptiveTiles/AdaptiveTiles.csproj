@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>AdaptiveTiles_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>261DE4A680C7325E1C215C806A3762951872A14C</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>CC84A9923925F888F71ED1D458BF648C21D7AC79</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>

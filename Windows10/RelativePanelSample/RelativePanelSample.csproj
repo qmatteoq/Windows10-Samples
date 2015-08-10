@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>RelativePanelSample_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>B4DE846EA5FBD7E13BEA61B3FA0E3E2D2CCF2CA4</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>2487F785BC90742A0B39C60BE8A4AA68C100D6DF</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>

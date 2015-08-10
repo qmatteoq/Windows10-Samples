@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>ApiDetection_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>80D6C031FD93F64F2F175512BBFAFE8AF8F6910F</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>D687E6D6EDD0307C16875521C299D6083923227D</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>

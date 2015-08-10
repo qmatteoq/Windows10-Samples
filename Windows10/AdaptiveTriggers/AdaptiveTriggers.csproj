@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>AdaptiveTriggers_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>6B3120B1A2921216D29E0D2CBD5C4A30AAC453CA</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>54FA61AF35F3A7099F27F63465F2DC187BBEE6FF</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>

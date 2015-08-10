@@ -20,7 +20,7 @@
     <PackageCertificateKeyFile>NewBindingSample_TemporaryKey.pfx</PackageCertificateKeyFile>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <PackageCertificateThumbprint>0A28C1B43D2FF08B471F5BFDF498EA2CBDD34274</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>54A300A804731EEFB6EF966862D5E4928D402EE0</PackageCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
     <DebugSymbols>true</DebugSymbols>
