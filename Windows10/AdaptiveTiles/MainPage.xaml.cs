@@ -30,9 +30,9 @@ namespace AdaptiveTiles
             this.InitializeComponent();
         }
 
-public void OnUpdateTileClicked(object sender, RoutedEventArgs e)
-{
-    string xml = @"<tile>
+        public void OnUpdateTileClicked(object sender, RoutedEventArgs e)
+        {
+            string xml = @"<tile>
         <visual>
         <binding template=""TileMedium"">
             <group>
@@ -55,12 +55,12 @@ public void OnUpdateTileClicked(object sender, RoutedEventArgs e)
 
 
 
-    XmlDocument doc = new XmlDocument();
-    doc.LoadXml(xml);
-    TileNotification notification = new TileNotification(doc);
-    TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
+            XmlDocument doc = new XmlDocument();
+            doc.LoadXml(xml);
+            TileNotification notification = new TileNotification(doc);
+            TileUpdater updater = TileUpdateManager.CreateTileUpdaterForApplication();
 
-    updater.Update(notification);
-}
+            updater.Update(notification);
+        }
     }
 }
