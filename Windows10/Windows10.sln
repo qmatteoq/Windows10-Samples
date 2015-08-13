@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReceiverWithResults", "App2
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileReceiver", "App2App\FileReceiver\FileReceiver.csproj", "{79D55D2F-E99E-41C0-B5FF-718286C5D684}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumAppService", "SumAppService\SumAppService.csproj", "{42E3347D-F3AB-4ED4-BADF-DC1EF7024535}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumAppService", "App2App\SumAppService\SumAppService.csproj", "{42E3347D-F3AB-4ED4-BADF-DC1EF7024535}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
