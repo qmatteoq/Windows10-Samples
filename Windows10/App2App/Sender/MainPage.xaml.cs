@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel;
+using Windows.ApplicationModel.AppService;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
@@ -79,6 +80,30 @@ namespace Sender
             options.TargetApplicationPackageFamilyName = "a29b22b7-2ea6-424d-8c3b-4f6112d9caef_e8f4dqfvn1be6";
 
             await Launcher.LaunchUriAsync(new Uri("textfile:"), options, data);
+        }
+
+        private async void OnUseAppServiceClicked(object sender, RoutedEventArgs e)
+        {
+            AppServiceConnection connection = new AppServiceConnection();
+            connection.PackageFamilyName = Package.Current.Id.FamilyName;
+            connection.AppServiceName = "SumService";
+
+            var status = await connection.OpenAsync();
+
+            if (status == AppServiceConnectionStatus.Success)
+            {
+                ValueSet data = new ValueSet();
+                data.Add("num1", 10);
+                data.Add("num2", 5);
+
+                var response = await connection.SendMessageAsync(data);
+                if (response.Status == AppServiceResponseStatus.Success)
+                {
+                    int sum = (int) response.Message["result"];
+                    MessageDialog dialog = new MessageDialog($"The sum is {sum}");
+                    await dialog.ShowAsync();
+                }
+            }
         }
     }
 }
