@@ -109,6 +109,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\MicrosoftLogo.png" />
+    <Content Include="Assets\squaretile-sdk.png" />
+    <Content Include="Assets\storelogo-sdk.png" />
     <Content Include="Assets\TRexInsider.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />

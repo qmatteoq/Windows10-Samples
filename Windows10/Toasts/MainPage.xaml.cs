@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Data.Xml.Dom;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.UI.Notifications;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -48,6 +49,36 @@ namespace Toasts
 
             ToastNotification notification = new ToastNotification(doc);
             ToastNotificationManager.CreateToastNotifier().Show(notification);
+
+            int badgeCounter;
+            if (ApplicationData.Current.LocalSettings.Values.ContainsKey("ToastCounter"))
+            {
+                badgeCounter = (int) ApplicationData.Current.LocalSettings.Values["ToastCounter"];
+            }
+            else
+            {
+                badgeCounter = 0;
+            }
+
+            badgeCounter++;
+
+            // Get the blank badge XML payload for a badge number
+            XmlDocument badgeXml = BadgeUpdateManager.GetTemplateContent(BadgeTemplateType.BadgeNumber);
+
+            // Set the value of the badge in the XML to our number
+            XmlElement badgeElement = badgeXml.SelectSingleNode("/badge") as XmlElement;
+            badgeElement.SetAttribute("value", badgeCounter.ToString());
+
+            // Create the badge notification
+            BadgeNotification badge = new BadgeNotification(badgeXml);
+
+            // Create the badge updater for the application
+            BadgeUpdater badgeUpdater = BadgeUpdateManager.CreateBadgeUpdaterForApplication();
+
+            // And update the badge
+            badgeUpdater.Update(badge);
+
+            ApplicationData.Current.LocalSettings.Values["ToastCounter"] = badgeCounter;
         }
 
         private void OnSendToastWithAlarmClicked(object sender, RoutedEventArgs e)
@@ -73,7 +104,7 @@ namespace Toasts
 
         private void OnSendToastWithBackgroundService(object sender, RoutedEventArgs e)
         {
-            string xml= $@"
+            string xml = $@"
                 <toast>
                     <visual>
                         <binding template='ToastGeneric'>
@@ -113,6 +144,19 @@ namespace Toasts
                 builder.Name = "ToastTask";
                 builder.TaskEntryPoint = "ToastsTask.CheckAnswerTask";
                 builder.SetTrigger(new ToastNotificationActionTrigger());
+                var status = await BackgroundExecutionManager.RequestAccessAsync();
+                if (status != BackgroundAccessStatus.Denied)
+                {
+                    builder.Register();
+                }
+            }
+
+            if (BackgroundTaskRegistration.AllTasks.All(x => x.Value.Name != "ActionCenterTask"))
+            {
+                BackgroundTaskBuilder builder = new BackgroundTaskBuilder();
+                builder.Name = "ActionCenterTask";
+                builder.TaskEntryPoint = "ToastsTask.ActionCenterTask";
+                builder.SetTrigger(new ToastNotificationHistoryChangedTrigger());
                 var status = await BackgroundExecutionManager.RequestAccessAsync();
                 if (status != BackgroundAccessStatus.Denied)
                 {
