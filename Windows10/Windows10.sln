@@ -39,9 +39,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumAppService", "App2App\Su
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notifications", "Notifications", "{EFDE1701-1763-4E0C-93F0-8BE68880E713}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toasts", "Toasts\Toasts.csproj", "{709E95F1-DF1C-4B03-BA33-1CDE3F4A631A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Toasts", "Notifications\Toasts\Toasts.csproj", "{709E95F1-DF1C-4B03-BA33-1CDE3F4A631A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToastsTask", "ToastsTask\ToastsTask.csproj", "{1A2E53FA-FEFD-4E5B-B9D1-1D0603D9F55F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToastsTask", "Notifications\ToastsTask\ToastsTask.csproj", "{1A2E53FA-FEFD-4E5B-B9D1-1D0603D9F55F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Notification Hub", "Notification Hub", "{60D9A3B4-1D9E-4FA8-A423-1C3EF81F7CA6}"
 EndProject
