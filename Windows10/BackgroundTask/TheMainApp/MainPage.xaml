@@ -8,6 +8,9 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel>
+            <TextBlock Text="Background Tasks" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" />
+        </StackPanel>
         <Button Content="Register background task" Click="OnRegisterBackgroundTaskClicked" />
     </Grid>
 </Page>

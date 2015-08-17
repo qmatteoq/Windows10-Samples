@@ -82,6 +82,40 @@ namespace Sender
             await Launcher.LaunchUriAsync(new Uri("textfile:"), options, data);
         }
 
+        private async void OnCheckSupportedUriClicked(object sender, RoutedEventArgs e)
+        {
+            string queryResult;
+            var result = await Launcher.QueryUriSupportAsync(new Uri("invoice:"), LaunchQuerySupportType.Uri);
+            if (result == LaunchQuerySupportStatus.Available)
+            {
+                queryResult = "The uri is supported";
+            }
+            else
+            {
+                queryResult = "The uri is not supported";
+            }
+
+            MessageDialog dialog = new MessageDialog(queryResult);
+            await dialog.ShowAsync();
+        }
+
+        private async void OnCheckAppInstalledClick(object sender, RoutedEventArgs e)
+        {
+            string queryResult;
+            var result = await Launcher.QueryUriSupportAsync(new Uri("sum:"), LaunchQuerySupportType.Uri, "467a521c-d93f-4c82-bfab-d18f4a8482f0_e8f4dqfvn1be6");
+            if (result == LaunchQuerySupportStatus.Available)
+            {
+                queryResult = "The app is installed;";
+            }
+            else
+            {
+                queryResult = "The app is not installed";
+            }
+
+            MessageDialog dialog = new MessageDialog(queryResult);
+            await dialog.ShowAsync();
+        }
+
         private async void OnUseAppServiceClicked(object sender, RoutedEventArgs e)
         {
             AppServiceConnection connection = new AppServiceConnection();
