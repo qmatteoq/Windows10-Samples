@@ -49,7 +49,6 @@ namespace NotificationHubSample.Server
             });
 
             devices = new ObservableCollection<DeviceRegistration>(devicesList);
-            client.get
             Devices.ItemsSource = devices;
         }
 
@@ -82,10 +81,10 @@ namespace NotificationHubSample.Server
         private async void OnDeleteDeviceClicked(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            RegistrationDescription device = (button.DataContext) as RegistrationDescription;
+            DeviceRegistration device = (button.DataContext) as DeviceRegistration;
 
             NotificationHubClient client = NotificationHubClient.CreateClientFromConnectionString(ConnectionString, "uwpsample");
-            await client.DeleteRegistrationAsync(device);
+            await client.DeleteRegistrationAsync(device.RegistrationId);
             devices.Remove(device);
         }
 
