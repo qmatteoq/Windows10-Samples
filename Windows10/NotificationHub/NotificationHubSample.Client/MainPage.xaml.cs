@@ -24,7 +24,7 @@ namespace NotificationHubSample.Client
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private const string ConnectionString = "Your connection string here";
+        private const string ConnectionString = "Endpoint=sb://windows10samples.servicebus.windows.net/;SharedAccessKeyName=DefaultFullSharedAccessSignature;SharedAccessKey=DlbQZoLHpq49BNJbP9YmkRVPoN4jqCfnJZwt+vAHU24=";
 
         public MainPage()
         {

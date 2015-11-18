@@ -32,14 +32,13 @@ namespace ApiDetection
             var ns = "Windows.Phone.UI.Input.HardwareButtons";
             if (Windows.Foundation.Metadata.ApiInformation.IsTypePresent(ns))
             {
-                Windows.Phone.UI.Input.HardwareButtons.BackPressed += Back_BackPressed;
+                Windows.Phone.UI.Input.HardwareButtons.CameraPressed += HardwareButtons_CameraPressed;
             }
         }
 
-        private async void Back_BackPressed(object sender, BackPressedEventArgs e)
+        private async void HardwareButtons_CameraPressed(object sender, CameraEventArgs e)
         {
-            e.Handled = true;
-            MessageDialog dialog = new MessageDialog("Hello from the Back button!");
+            MessageDialog dialog = new MessageDialog("Hello from the camera button!");
             await dialog.ShowAsync();
         }
     }

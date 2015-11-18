@@ -9,5 +9,6 @@ namespace NotificationHubSample.Server.Models
         public string Tags { get; set; }
 
         public DateTime ExpirationTime { get; set; }
+
     }
 }

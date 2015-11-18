@@ -7,6 +7,7 @@ using Windows.ApplicationModel.Background;
 using Windows.Data.Xml.Dom;
 using Windows.Storage;
 using Windows.UI.Notifications;
+using Windows.Web.Http;
 
 namespace ToastsTask
 {

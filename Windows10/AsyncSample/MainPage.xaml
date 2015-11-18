@@ -1,0 +1,18 @@
+﻿<Page
+    x:Class="AsyncSample.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AsyncSample"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button Content="UI Blocking operation" Click="OnStartBlockingOperation" />
+            <Button Content="Async / await operation" Click="OnAsyncAwaitOperation" />
+            <Button Content="Localize me" Click="OnLocalizeMeClicked" />
+            <TextBlock x:Name="Status" TextWrapping="Wrap" />
+        </StackPanel>
+    </Grid>
+</Page>
